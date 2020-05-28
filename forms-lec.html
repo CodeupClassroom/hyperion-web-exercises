@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Forms</title>
+</head>
+<body>
+    <form method="post" action="https://hookb.in/LgDkYxLZPWsobGWGadEy">
+        <label for="name">Input Your Name: </label>
+        <input type="text" name="user" id="name" placeholder="Name goes here" disabled />
+
+        <label for="password">Input Your Password: </label>
+        <input type="password" name="pw" id="password" />
+        <br />
+
+        <label for="bodyText">Input text:</label>
+        <br />
+        <textarea name="bodyText" id="bodyText" cols="30" rows="10">How was your day?</textarea>
+        <br />
+
+        <input type="checkbox" name="addToEmailList" id="addToEmailList" value="true" checked > <label for="addToEmailList">I would like to receive emails about updates to this product in the future!</label>
+
+        <h2>How did you hear about us?</h2>
+        <input type="checkbox" value="billboard" name="capture" id="billboard"> <label for="billboard">Billboard</label>
+
+        <input type="checkbox" value="learnToCode" name="capture" id="ltc"> <label for="ltc">Learn to Code Workshop</label>
+
+        <br>
+        <h4>Which of these is the most correct (in JavaScript): 4 + "4"</h4>
+        <input type="radio" name="multipleChoice" value="A" id="A"> <label for="A">8</label><br>
+        <input type="radio" name="multipleChoice" value="B" id="B"> <label for="B">44</label><br>
+        <input type="radio" name="multipleChoice" value="C" id="C"> <label for="C">"44"</label><br>
+        <input type="radio" name="multipleChoice" value="D" id="D"> <label for="D">"8"</label><br>
+
+        <label for="dropdown">Select your browser:</label>
+        <select name="dropdown" id="dropdown">
+            <option value="opera">Opera</option>
+            <option value="netscape">Netscape Navigator</option>
+            <option value="aol" selected>America Online Browser</option>
+            <option value="safari">Safari</option>
+        </select>
+
+        <input type="hidden" name="user-id" value="432">
+
+        <button type="submit">Submit your form</button>
+    </form>
+</body>
+</html>
