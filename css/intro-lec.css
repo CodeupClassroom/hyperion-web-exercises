@@ -1,0 +1,26 @@
+/* Style for heading elements */
+
+h1 {
+    color: forestgreen;
+    text-decoration: overline;
+    background-color: palegoldenrod;
+}
+
+.fancy-heading {
+    color: midnightblue;
+}
+
+.other-class {
+    background-color: plum;
+}
+
+/*
+    Multi
+    Line
+    Comments
+                are
+        kewl.
+ */
+span {
+    color: red;
+}
