@@ -1,0 +1,71 @@
+* {
+    padding: 0;
+    margin: 0;
+    background: #e8e3d1;
+}
+
+#battlefield {
+    border: 5px black solid;
+    margin: 10vh 20vw;
+    background: #cbffcd;
+    height: 400px;
+}
+
+#movable {
+    background: teal;
+    height: 110px;
+    width: 110px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+#movable2 {
+    background: firebrick;
+    height: 105px;
+    width: 105px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+#movable3 {
+    background: darkslateblue;
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#arena {
+    border: 5px black solid;
+    margin: 10vh 20vw;
+}
+
+#box {
+    background: #884cad;
+    height: 250px;
+    width: 350px;
+    float: right;
+}
+
+#crate {
+    background: #a6d160;
+    height: 150px;
+    width: 250px;
+    margin-right: 16px;
+    float: left;
+}
+
+#basket {
+    background: firebrick;
+    height: 300px;
+    width: 125px;
+    float: left;
+}
+
+#text {
+    clear: both;
+}
+
+
+
