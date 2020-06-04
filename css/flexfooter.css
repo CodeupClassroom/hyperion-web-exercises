@@ -29,10 +29,10 @@ footer .container {
     justify-content: space-between;
 }
 .logo-div {
-    flex-grow: 1;
-    /*flex-basis: 25%;*/
-    /*position: relative;*/
-    /*bottom: 5px;*/
+    /*flex-grow: 1;*/
+    flex-basis: 25%;
+    position: relative;
+    bottom: 5px;
 }
 h1 {
     font-size: 2em;
