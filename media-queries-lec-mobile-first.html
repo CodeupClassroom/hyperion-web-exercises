@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+	<title>Let's Talk About Media Queries</title>
+	<script src="https://kit.fontawesome.com/317175159f.js" crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/css?family=Anonymous+Pro|Fugaz+One&display=swap" rel="stylesheet">
+	<style>
+		* {
+			box-sizing: border-box;
+			font-family: 'Anonymous Pro', monospace;
+			margin: 0;
+		}
+		nav {
+			display: flex;
+			justify-content: center;
+			align-content: center;
+			height: 5em;
+			background-color: #0fb784;
+			color: whitesmoke;
+			position: relative;
+			padding: 3px;
+			border-bottom: #373fff 3px solid;
+		}
+
+		ul {
+			list-style: none;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 0;
+		}
+
+		li {
+			display: inline-block;
+			margin: .4em;
+		}
+
+		a {
+			text-decoration: none;
+			color: whitesmoke;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		a:hover {
+			color: #373fff;
+		}
+
+		h2 > a {
+			font-size: 2.2em;
+			position: absolute;
+			top: 50%; /* position the top  edge of the element at the middle of the parent */
+			left: 50%; /* position the left edge of the element at the middle of the parent */
+			transform: translate(-50%, -50%);
+			/* This is a shorthand of
+									 translateX(-50%) and translateY(-50%) */
+			font-family: 'Fugaz One', cursive;
+			text-shadow: 3px 3px #373fff;
+		}
+
+		h2 > a:hover {
+			text-shadow: -3px -3px whitesmoke;
+		}
+
+		i {
+			font-size: 2em;
+			margin-right: 8px;
+		}
+		.big-title, .small-title, .smallest-title {
+			display: none;
+		}
+		main {
+			margin: 5px 10vw;
+		}
+		section {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		section>* {
+			display: inline-block;
+		}
+		#side-story, #main-story {
+			width: 100%;
+		}
+		hr {
+			display: block;
+		}
+		article {
+			overflow: auto;
+			height: 178px;
+			margin: 10px 0;
+		}
+		.pixel {
+			width: 100%;
+			height: auto;
+		}
+		main h2 {
+			font-size: 1.75em;
+		}
+		#to-what {
+			display: none;
+		}
+		main h2:after {
+			content: "Stegosaurus Rx!"
+		}
+		nav>ul:last-child {
+			display: none;
+		}
+
+		@media screen and (min-width: 882px) {
+			nav>ul:last-child {
+				display: flex;
+			}
+			nav {
+				justify-content: space-between;
+			}
+		}
+
+		@media screen and (min-width: 1062px) {
+			.smallest-title {
+				display: block;
+			}
+			main h2 {
+				font-size: 2.5em;
+			}
+			#to-what {
+				display: inline;
+			}
+			main h2:after {
+				content: ""
+			}
+		}
+
+		@media screen and (min-width: 1186px) {
+			.small-title {
+				display: block;
+			}
+			.smallest-title {
+				display: none;
+			}
+			main h2 {
+				font-size: 3em;
+			}
+			hr {
+				display: none;
+			}
+			div {
+				display: flex;
+				justify-content: space-evenly;
+			}
+			#side-story {
+				width: 35%;
+				order: 1;
+			}
+			#main-story {
+				width: 65%;
+				order: 2;
+			}
+			article {
+				height: 128px;
+				margin: 0;
+			}
+
+		}
+
+		@media screen and (min-width: 1368px) {
+			.small-title {
+				display: none;
+			}
+			.big-title {
+				display: block;
+			}
+			main h2 {
+				font-size: 4em;
+			}
+		}
+
+	</style>
+</head>
+<body>
+<nav>
+	<ul>
+		<li><a href="#">Market</a></li>
+		<li><a href="#">Information</a></li>
+		<li><a href="#">Articles</a></li>
+		<li><a href="#">Careers</a></li>
+	</ul>
+	<h2 class="big-title">
+		<a href="#">Stegosaurus Rx</a>
+	</h2>
+	<h2 class="small-title">
+		<a href="#">Stego. Rx</a>
+	</h2>
+	<h2 class="smallest-title">
+		<a href="#">S. Rx</a>
+	</h2>
+	<ul>
+		<li>Social Media</li>
+		<li><a href="#" target="_blank"><i class="fab fa-twitter-square"></i> Twitter</a></li>
+		<li><a href="https://www.linkedin.com/in/david-a-stephens/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+		<li><a href="#" target="_blank"><i class="fab fa-facebook-square"></i> Facebook</a></li>
+	</ul>
+</nav>
+<main>
+	<img class="pixel" src="img/pixel-art.gif" alt="pixel art" title="This background is from The Last Blade 2 for the Neo Geo.">
+	<section>
+		<h2>
+			Welcome to <span id="to-what">my web-zone!</span>
+		</h2>
+		<div>
+			<article id="main-story">
+				<h4>
+					Main Story
+				</h4>
+				<p>
+					The sky calls to us at the edge of forever culture adipisci velit citizens of distant epochs corpus callosum? Paroxysm of global death circumnavigated sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem quis nostrum exercitationem ullam corporis suscipit laboriosam Rig Veda kindling the energy hidden in matter. Vel illum qui dolorem eum fugiat quo voluptas nulla pariatur extraordinary claims require extraordinary evidence two ghostly white figures in coveralls and helmets are soflty dancing paroxysm of global death globular star cluster a still more glorious dawn awaits.
+				</p>
+			</article>
+			<hr>
+			<article id="side-story">
+				<h4>
+					Side Story
+				</h4>
+				<p>
+					Realm of the galaxies astonishment Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit something incredible is waiting to be known the carbon in our apple pies intelligent beings? Ship of the imagination hundreds of thousands shores of the cosmic ocean the only home we've ever known a very small stage in a vast cosmic arena inconspicuous motes of rock and gas? The sky calls to us quis nostrum exercitationem ullam corporis suscipit laboriosam the only home we've ever known the sky calls to us great turbulent clouds Neque porro quisquam est and billions upon billions upon billions upon billions upon billions upon billions upon billions.
+				</p>
+			</article>
+		</div>
+	</section>
+</main>
+</body>
+</html>
