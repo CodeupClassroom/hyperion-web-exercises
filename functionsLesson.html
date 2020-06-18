@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Functions Lesson</h1>
+    <script>
+    (function(){
+        console.log(i);
+        // "use strict";
+        let a = 4;
+        function firstSyntax() {
+            console.log("do something");
+            console.log("do something else");
+            console.log(a);
+        }
+        firstSyntax();
+
+        let secondSyntax = function () {
+            let a = 1234;
+            console.log("do something");
+            console.log("do something else");
+            console.log(a);
+
+        };
+        secondSyntax();
+
+        // (function(){
+            var i = 9;
+            console.log("Here we are in IIFE!")
+        // })();
+
+        let dog = function () {
+            let name = prompt("What is your dog's name?");
+            alert("Hi, " + name + "! You're such a good doggie!!");
+        }
+        dog();
+
+        console.log(i);
+    })();
+    </script>
+</body>
+</html>
