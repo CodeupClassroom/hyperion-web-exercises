@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+nav ul {
+    font-family: 'Poiret One', cursive;
+    font-size: 1.5em;
+}
+
+#toku {
+    font-family: 'Poller One', cursive;
+}
+
+.bg-indigo {
+    background: var(--indigo);
+}
+
+.side-nav-font {
+    font-size: 1.25em;
+}
+
+.media-container {
+    height: 90vh;
+    overflow: auto;
+}
+
+.media-button {
+    background: linear-gradient(225deg, #331E36, var(--indigo));
+    font-size: 6em;
+    margin: 10px;
+}
