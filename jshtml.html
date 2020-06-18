@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+
+
+<!--    <script src="js/jshtml.js">-->
+    <script>
+        "use strict";
+        console.log("Hello World!");
+        // alert("Hello World!");
+        // let answer = confirm("Are you sure you want to do this?");
+        // let answer = confirm("Are you sure you want to use this site?");
+        // if (answer) {
+        //     // do all the site stuff here
+        // } // else do nothing
+        // console.log(answer);
+        // let answer = prompt("Do you like tacos?");
+        // console.log(answer);
+        alert("We are going to play a game.");
+        let play = confirm("Do you want to guess a color?");
+        if (play) {
+            let color = prompt("What color do you guess?");
+            console.log(typeof color);
+            if (color === "orange") {
+            // if (numberGuess == 17) {
+                    alert("You guessed right!");
+                } else {
+                    alert("sorry, " + color + " is not right.");
+                }
+
+        }
+
+    </script>
+</body>
+</html>
