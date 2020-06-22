@@ -8,7 +8,11 @@
  * Example
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
+const sayHello = function (name) {
+    return "Hello, " + name + "!";
+}
 
+// console.log(sayHello("codeup"));
 /**
  * TODO:
  * Call the function 'sayHello' and pass your name as a string literal argument.
@@ -16,6 +20,8 @@
  *
  * console.log 'helloMessage' to check your work
  */
+let helloMessage = sayHello("Hyperion");
+console.log(helloMessage);
 
 /**
  * TODO:
@@ -23,6 +29,9 @@
  * variable to the 'sayHello' function. You should see the same output in the
  * console.
  */
+let myName = "Hyperion";
+helloMessage = sayHello(myName);
+console.log(helloMessage);
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
@@ -45,6 +54,15 @@ var random = Math.floor((Math.random() * 3) + 1);
  * different result everytime you refresh the page if you are using the random
  * number)
  */
+const isTwo = function (num) {
+    return num === 2;
+}
+console.log(isTwo(random));
+
+random = Math.floor((Math.random() * 3) + 1);
+console.log(isTwo(random));
+random = Math.floor((Math.random() * 3) + 1);
+console.log(isTwo(random));
 
 /**
  * TODO:
@@ -57,6 +75,13 @@ var random = Math.floor((Math.random() * 3) + 1);
  * > calculateTip(0.25, 25.50) // returns 6.37
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
+const calculateTip = function(tipPercentage, totalBill) {
+    return tipPercentage * totalBill;
+}
+console.log(calculateTip(0.20, 20)); // returns 4
+console.log(calculateTip(0.25, 25.50)); // returns 6.37
+console.log(calculateTip(0.15, 33.42)); // returns 5.013
+
 
 /**
  * TODO:
@@ -64,6 +89,9 @@ var random = Math.floor((Math.random() * 3) + 1);
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
+let totalBill = parseFloat(prompt("What is your bill total?"));
+let tipPercentage = +prompt("What percentage would you like to tip? (i.e. .2 for 20%)");
+alert("Suggested Tip Amount: $" + calculateTip(tipPercentage, totalBill));
 
 /**
  * TODO:
@@ -79,3 +107,13 @@ var random = Math.floor((Math.random() * 3) + 1);
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
+const applyDiscount = function(originalPrice, dicountPercent) {
+    return originalPrice - originalPrice * dicountPercent;
+}
+
+var originalPrice = 100;
+var dicountPercent = .2; // 20%
+console.log(applyDiscount(originalPrice, dicountPercent)); // 80
+
+console.log(applyDiscount(45.99, 0.12)); // 40.4712
+
