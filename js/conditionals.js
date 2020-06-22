@@ -103,8 +103,8 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * return value.
  */
 
-const calculateTotal = function(luckyNum, totalAmount) {
-    switch(luckyNum) {
+const calculateTotal = function (luckyNum, totalAmount) {
+    switch (luckyNum) {
         case 1:
             return (totalAmount - totalAmount * .1).toFixed(2);
         case 2:
@@ -164,7 +164,15 @@ var luckyNumber = Math.floor(Math.random() * 6);
 
 let confirmNumberInput = confirm("Would you like to enter a number?");
 if (confirmNumberInput) {
-    let confirmNumberInput = +prompt("Enter a number: ");
+    let confirmNumberInput = prompt("Enter a number: ");
+
+/*
+    // Removes everything that is not a digit, if needed
+    let regex = new RegExp(/([a-z])*([A-Z])*([!@#$%^&*()_+{}|:\-="<>?\]\[/.,';\\])*!/g)
+    confirmNumberInput = confirmNumberInput.replace(regex, "");
+    confirmNumberInput = parseInt(confirmNumberInput);
+*/
+
     // Check to see if the user prompt returned a number or not
     if (isNaN(confirmNumberInput)) {
         alert("You did not enter a number.");
