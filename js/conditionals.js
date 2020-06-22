@@ -166,12 +166,10 @@ let confirmNumberInput = confirm("Would you like to enter a number?");
 if (confirmNumberInput) {
     let confirmNumberInput = prompt("Enter a number: ");
 
-/*
     // Removes everything that is not a digit, if needed
-    let regex = new RegExp(/([a-z])*([A-Z])*([!@#$%^&*()_+{}|:\-="<>?\]\[/.,';\\])*!/g)
+    let regex = new RegExp(/([a-z])*([A-Z])*([!@#$%^&*()_+{}|:\-="<>?\]\[/.,';\\])*/g)
     confirmNumberInput = confirmNumberInput.replace(regex, "");
     confirmNumberInput = parseInt(confirmNumberInput);
-*/
 
     // Check to see if the user prompt returned a number or not
     if (isNaN(confirmNumberInput)) {
