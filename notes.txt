@@ -1,0 +1,11 @@
+" bottles of beer on the wall"
+" bottles of beer"
+"Take 1 down"
+"Pass it around"
+" bottles of beer on the wall"
+
+
+
+        let x = Math.floor((Math.random() * 10) + 1);
+        console.log(x);
+        let guess = prompt("I chose a number between 1 and 10. What is your guess?"
