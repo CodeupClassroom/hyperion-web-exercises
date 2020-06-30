@@ -51,23 +51,37 @@
 
 let multiply = function(a,b) {
     let answer = 0;
-    for (let i = 0;i<b;i++) {
+    while (b > 0) {
+        b--;
         answer += a;
     }
     return answer;
+    // let answer = 0;
+    // for (let i = 0;i<b;i++) {
+    //     answer += a;
+    // }
+    // return answer;
 }
 
-console.log(multiply(6, 7));
+console.log(multiply(4, 7));
 
 let addition = function(a,b) {
-    let answer = a;
-    for (let i = 0; i<b;i++) {
-        answer++;
+    // while (a > 0) {
+    //     a--;
+    //     b++;
+    // }
+    // return b;
+
+    for (; a > 0; a--)
+    {
+        b++;
     }
-    return answer;
+    return b;
 }
 
-console.log(addition(3,4));
+console.log(addition(7,2));
+
+
 
 console.log("We are done")
 
