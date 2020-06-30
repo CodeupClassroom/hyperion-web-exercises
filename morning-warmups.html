@@ -180,10 +180,23 @@
             }
         }
 
-        console.log("lights are " + lights);
-        lightswitch();
-        console.log("lights are now " + lights);
+        // console.log("lights are " + lights);
+        // lightswitch();
+        // console.log("lights are now " + lights);
 
+        var countTo10 = function() {
+            var num = 1;
+            while (num <= 10) {
+                if (num % 2 === 0) {
+                    console.log(num + " is even");
+                } else {
+                    console.log(num + " is odd");
+                }
+                num++;
+            }
+        }
+
+        countTo10();
     </script>
 </body>
 </html>
