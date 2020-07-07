@@ -8,39 +8,70 @@
 
 <h2 id="message">This BOM will self destruct in <span id="timer">5</span> seconds...</h2>
 <button id="defuser">Defuse the BOM</button>
+<button id="defuser1">Defuse process 1</button>
+<button id="defuser2">Defuse process 2</button>
+<button id="defuser3">Defuse process 3</button>
+<button id="defuser4">Defuse process 4</button>
 
 <script>
-(function() {
-    "use strict";
+    (function () {
+        "use strict";
 
-    var detonationTimer = 5;
+        var detonationTimer = 5;
 
-    // TODO: This function needs to be called once every second
-    function updateTimer() {
-        if (detonationTimer == 0) {
-            alert('EXTERMINATE!');
-            document.body.innerHTML = '';
-        } else if (detonationTimer > 0) {
-            document.getElementById('timer').innerHTML = detonationTimer;
+        // TODO: This function needs to be called once every second
+        function updateTimer() {
+            if (detonationTimer == 0) {
+                alert('EXTERMINATE!');
+                document.body.innerHTML = '';
+            } else if (detonationTimer > 0) {
+                document.getElementById('timer').innerHTML = detonationTimer;
+            }
+
+            detonationTimer--;
         }
 
-        detonationTimer--;
-    }
+        // var setIntervalId = setInterval(updateTimer, 1000);
+/*        const id1 =setInterval(function () {
+            console.log('a');
+        }, 2000);
+        const id2 =setInterval(function () {
+            console.log('b');
+        }, 4000);
+        const id3 =setInterval(function () {
+            console.log('c');
+        }, 6000);
+        const id4 =setInterval(function () {
+            console.log('d');
+        }, 8000);*/
 
-    // TODO: When this function runs, it needs to
-    // cancel the interval/timeout for updateTimer()
-    function defuseTheBOM() {
+        // TODO: When this function runs, it needs to
+        // cancel the interval/timeout for updateTimer()
+        function defuseTheBOM() {
+            // return clearInterval(id1);
+        }
 
-    }
+        // Don't modify anything below this line!
+        //
+        // This causes the defuseTheBOM() function to be called
+        // when the "defuser" button is clicked.
+        // We will learn about events in the DOM lessons
+        var defuser = document.getElementById('defuser');
+        defuser.addEventListener('click', defuseTheBOM);
 
-    // Don't modify anything below this line!
-    //
-    // This causes the defuseTheBOM() function to be called
-    // when the "defuser" button is clicked.
-    // We will learn about events in the DOM lessons
-    var defuser = document.getElementById('defuser');
-    defuser.addEventListener('click', defuseTheBOM);
-})();
+/*        window.document.getElementById('defuser1').addEventListener("click", function() {
+            clearInterval(id1);
+        })
+        document.getElementById('defuser2').addEventListener("click", function() {
+            clearInterval(id2);
+        })
+        document.getElementById('defuser3').addEventListener("click", function() {
+            clearInterval(id3);
+        })
+        document.getElementById('defuser4').addEventListener("click", function() {
+            clearInterval(id4);
+        })*/
+    })();
 </script>
 </body>
 </html>
