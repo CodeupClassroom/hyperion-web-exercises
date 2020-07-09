@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>First Mapbox Map</title>
+    <!-- Mapbox CSS -->
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='stylesheet' />
+    <!-- Custom CSS -->
+    <style>
+        #map {
+            /* the width and height may be set to any size */
+            width: 100%;
+            height: 700px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>My First Mapbox Map!</h1>
+
+<!-- The HTML element that serves as the Mapbox container -->
+<div id='map'></div>
+
+<h3 id="reverseGeo"></h3>
+
+<!-- Mapbox JS -->
+<script src='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js'></script>
+<script src="js/keys.js"></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
+<!-- Custom JS -->
+<script>
+    mapboxgl.accessToken = mapboxKey;
+    let map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        zoom: 10,
+        center: [-98.4916, 29.4252]
+    });
+
+    // map.setCenter([-97.6789, 30.5083]);
+
+    var marker = new mapboxgl.Marker()
+        .setLngLat([-98.4861, 29.4260])
+        .addTo(map);
+
+    var popup = new mapboxgl.Popup()
+        .setLngLat([-98.489615, 29.426827])
+        .setHTML("<h3>Codeup Rocks!</h3>")
+        .addTo(map)
+
+    var alamoPopup = new mapboxgl.Popup()
+        .setHTML("<h3>Remember The Alamo!</h3>")
+        .addTo(map)
+
+    marker.setPopup(alamoPopup)
+
+    document.addEventListener("keyup", function(e) {
+        if (e.key === " ") {
+            let rrMark = new mapboxgl.Marker()
+                .setLngLat([-97.6789, 30.5083])
+                .addTo(map);
+        }
+    });
+
+    geocode("19179 Blanco Rd #101, San Antonio, TX 78258", mapboxKey).then(function(data) {
+        console.log(data);
+        new mapboxgl.Marker().setLngLat(data).addTo(map);
+    });
+
+    reverseGeocode({lat: 51.2194, lng: 4.4025}, mapboxKey).then(function(data) {
+        console.log(data);
+        document.querySelector("#reverseGeo").innerHTML = data;
+    })
+
+
+</script>
+</body>
+</html>
