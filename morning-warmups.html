@@ -199,5 +199,16 @@
         countTo10();
     </script>
     <script src="js/fizzbuzz.js"></script>
+    <script src="js/fibonacci.js"></script>
+    <script>
+        const isolateTensDigit = function (threeDigitNum) {
+            threeDigitNum %= 100;
+            threeDigitNum /= 10;
+            threeDigitNum = Math.floor(threeDigitNum);
+            return threeDigitNum;
+        }
+        console.log(isolateTensDigit(345));
+        console.log(isolateTensDigit(678));
+    </script>
 </body>
 </html>
