@@ -196,10 +196,10 @@
             }
         }
 
-        countTo10();
+        // countTo10();
     </script>
-    <script src="js/fizzbuzz.js"></script>
-    <script src="js/fibonacci.js"></script>
+<!--    <script src="js/fizzbuzz.js"></script>-->
+<!--    <script src="js/fibonacci.js"></script>-->
     <script>
         const isolateTensDigit = function (threeDigitNum) {
             threeDigitNum %= 100;
@@ -207,8 +207,24 @@
             threeDigitNum = Math.floor(threeDigitNum);
             return threeDigitNum;
         }
-        console.log(isolateTensDigit(345));
-        console.log(isolateTensDigit(678));
+        // console.log(isolateTensDigit(345));
+        // console.log(isolateTensDigit(678));
+
+        // Write a function that will return an array passed sorted in reverse alphabetical order, when passed an array of strings. It should return null if any element within the array is not a string.
+
+        function revAlphaArray(arr) {
+            for (let j = 0; j < arr.length; j++) {
+                if (typeof arr[j] !== "string") {
+                    return null;
+                }
+            }
+            return arr.sort().reverse();
+        }
+
+        // console.log(revAlphaArray([0]));
+        // console.log(revAlphaArray(["Prim", "Imar", "Rima", "Mary"]));
+
+
     </script>
 </body>
 </html>
