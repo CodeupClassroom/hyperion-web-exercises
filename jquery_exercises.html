@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery</title>
+    <style>
+        .highlighted {
+            background-color: #BFD45D;
+        }
+    </style>
+</head>
+<body>
+<h1 id="daily">Daily Routine</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet aspernatur consectetur deleniti doloremque ducimus earum harum illo molestias neque non obcaecati, porro provident repellendus suscipit tempore voluptate? Facere, hic.</p>
+<h2>Morning</h2>
+<ul>
+    <li class="hygeine">Wash Face</li>
+    <li id="coffee">Ahhhh, Coffee</li>
+    <li class="health">Stretch</li>
+    <li id="baby">Water Plants</li>
+    <li class="health">Workout</li>
+    <li>Breakfast</li>
+    <li class="health hygeine">Brush Teeth</li>
+</ul>
+<h2>Daily</h2>
+<ul>
+    <li class="online">Sign Into Zoom</li>
+    <li id="codeup" class="online">Codeup Classroom</li>
+    <li class="codeup">Code Code Code</li>
+</ul>
+<h2>Evening</h2>
+<ul>
+    <li>Log Off/Close Laptop</li>
+    <li class="health">Dinner</li>
+    <li class="online">TikTok/Insta/Twitter</li>
+    <li class="codeup">Review Lectures</li>
+    <li id="beer">Crack a beer</li>
+    <li class="health hygeine">Brush Teeth</li>
+    <li class="hygeine">Wash Face</li>
+    <li>Read</li>
+</ul>
+    <script src="js/jquery-3.5.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            console.log("Ready to roll");
+            // alert($('#coffee').html());
+            // $('.codeup').css('border','1px solid red');
+            $('li').css('font-size', '20px');
+            $('h1, p, .codeup').addClass('highlighted');
+            alert($('h1').html());
+        });
+    </script>
+</body>
+</html>
