@@ -4,14 +4,28 @@
     <meta charset="UTF-8">
     <title>jQuery</title>
     <style>
+        li {
+            width: fit-content;
+            background-color: lightgoldenrodyellow;
+        }
         .highlighted {
             background-color: #BFD45D;
+        }
+        .pink {
+            background-color: pink;
+        }
+        .brass {
+            font-size: 18px;
+        }
+        .red {
+            color: crimson;
         }
     </style>
 </head>
 <body>
 <h1 id="daily">Daily Routine</h1>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet aspernatur consectetur deleniti doloremque ducimus earum harum illo molestias neque non obcaecati, porro provident repellendus suscipit tempore voluptate? Facere, hic.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet aspernatur consectetur deleniti doloremque ducimus earum harum illo molestias neque non obcaecati, porro provident repellendus suscipit tempore voluptate? Facere, hic.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet aspernatur consectetur deleniti doloremque ducimus earum harum illo molestias neque non obcaecati, porro provident repellendus suscipit tempore voluptate? Facere, hic.</p>
 <h2>Morning</h2>
 <ul>
     <li class="hygeine">Wash Face</li>
@@ -43,11 +57,27 @@
     <script>
         $(document).ready(function(){
             console.log("Ready to roll");
-            // alert($('#coffee').html());
-            // $('.codeup').css('border','1px solid red');
-            $('li').css('font-size', '20px');
-            $('h1, p, .codeup').addClass('highlighted');
-            alert($('h1').html());
+
+            let pinks = ['pink', 'salmon', 'hotpink', 'lightpink', 'deeppink', 'green']
+            $('h1').click(function(){
+                let randomColor = pinks[Math.floor(Math.random()*pinks.length)];
+                $(this).css("background-color", randomColor);
+            });
+            $('p').dblclick(function () {
+                $(this).addClass("brass");
+            });
+            $('li').hover(
+                function () {
+                    $(this).addClass("red")
+                },
+                function () {
+                    $(this).removeClass("red")
+                }
+            )
+            setInterval(function () {
+                let randomColor = pinks[Math.floor(Math.random()*pinks.length)];
+                $('h1').css("background-color", randomColor);
+            }, 2000)
         });
     </script>
 </body>
