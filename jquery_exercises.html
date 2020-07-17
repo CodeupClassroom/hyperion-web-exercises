@@ -60,12 +60,16 @@
 
             let pinks = ['pink', 'salmon', 'hotpink', 'lightpink', 'deeppink', 'green']
             $('h1').click(function(){
-                let randomColor = pinks[Math.floor(Math.random()*pinks.length)];
-                $(this).css("background-color", randomColor);
+                // let randomColor = pinks[Math.floor(Math.random()*pinks.length)];
+                // $(this).css("background-color", randomColor);
+                $(this).html("Hello <strong style='text-decoration: underline'>Hyperion</strong>")
             });
             $('p').dblclick(function () {
                 $(this).addClass("brass");
             });
+            $('li').dblclick(function() {
+                $(this).toggle(500).delay(1000).toggle(500)
+            })
             $('li').hover(
                 function () {
                     $(this).addClass("red")
