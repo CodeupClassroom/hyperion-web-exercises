@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Intro</title>
+</head>
+<body>
+    <h1>We are learning jQuery in 2020!</h1>
+    <p class="lorem odd">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis eum excepturi perspiciatis recusandae ut! Aliquam animi beatae maxime natus reprehenderit. Accusantium autem commodi culpa, esse incidunt magnam nam nihil ullam.</p>
+    <p class="lorem">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam autem cum distinctio dolore ea enim, facilis hic ipsam laboriosam magnam, nobis nostrum quia quisquam quo repudiandae vitae voluptatem voluptatibus.</p>
+    <p id="hello" class="odd">HelloworldHelloworldHelloworld HelloworldHelloworldHelloworldHelloworldHelloworldHelloworldHelloworldHelloworldHelloworldHelloworldHelloworld HelloworldHelloworldHelloworldHelloworldHelloworld HelloworldHelloworldHelloworld HelloworldHelloworldHelloworldHelloworld HelloworldHelloworldHelloworld</p>
+
+<!--    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>-->
+    <script src="js/jquery-3.5.1.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            // js goes here that will execute when the page has finished loading
+            // alert("Ready to go!")
+            // this is the vanilla javascript way
+            // let stripes = document.getElementsByClassName('odd');
+            // for (let i=0;i<stripes.length;i++)
+            //     stripes[i].style.backgroundColor = 'lightgrey';
+            // this is the jQuery way
+            // $('.odd').css({'background-color':'lightgrey'});
+
+            // jQuery('.lorem').css({textDecoration:'underline'});
+            // $('.odd').toggle(1000).toggle(1000).toggle(1000).toggle(1000);
+            $("h1, #hello").css({
+                backgroundColor:"yellow",
+                color:'red'
+            });
+            // $('*').css('border', '1px solid #F00');
+        })
+    </script>
+</body>
+</html>

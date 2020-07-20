@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags must come first in the head; any other head content must come after these tags -->
+    <title>jQuery 101 Template</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <style type="text/css">
+	.jumbotron {text-align: center;}
+    .fuchsia {background-color: fuchsia}
+    .highlighted {background-color: #eeff00}
+    .redoutline {border: 1px solid red}
+  </style>
+
+  </head>
+  <body>
+<main class="container">
+  <header class="jumbotron">
+    <h1>Let's have Fun</h1>      
+    <button id="btn1" class="btn btn-primary">#btn1</button>
+    <button id="btn2" class="btn btn-default">#btn2</button>
+    <button id="btn3" class="btn btn-primary">#btn3</button>
+    <button id="btn4" class="btn btn-default">#btn4</button>
+  </header>
+  <section class="col-xs-3">
+    <div id="panel1" class="panel panel-primary">
+      <div class="panel-heading">
+         #panel1
+      </div>
+      <div class="panel-body">
+        Content
+      </div>
+    </div>
+  </section>
+  <section class="col-xs-3">
+    <div id="panel2" class="panel panel-default">
+      <div class="panel-heading">
+        #panel2
+      </div>
+      <div class="panel-body">
+        Content
+      </div>
+    </div>
+  </section>
+  <section class="col-xs-3">
+  <div id="panel3" class="panel panel-primary">
+    <div class="panel-heading">
+      #panel3
+    </div>
+    <div class="panel-body">
+      Content
+    </div>
+  </div>
+</section>
+  <section class="col-xs-3">
+  <div id="panel4" class="panel panel-default">
+    <div class="panel-heading">
+      #panel4
+    </div>
+    <div class="panel-body">
+      Content
+    </div>
+  </div>
+</section>
+</main>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<!-- Latest compiled and minified Bootstrap JavaScript --> 
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	
+	
+    <script>
+//  vanilla js
+//      document.getElementById("btn1").addEventListener("click", function(){
+//        document.getElementById("panel1").classList.add("highlighted");
+//      })
+
+    $(document).ready(function(){
+      "use strict";
+
+      // $(".jumbotron").mousemove(function(e){
+      //   // e.preventDefault();
+      //   console.log(e);
+      // })
+
+      let toggleFuchsia = function () {
+        // conditional to toggle the class on/off
+        if ($(this).hasClass("fuchsia")) {
+          $(this).removeClass("fuchsia");
+        } else {
+          $(this).addClass("fuchsia");
+        }
+      }
+
+      // jquery equivalent to line 80
+      $('#btn1').click(function(){
+        $("#panel1").addClass("highlighted");
+      });
+      $('#btn2').dblclick(function () {
+        $("#panel2").addClass("redoutline");
+      });
+      $('.panel').dblclick(toggleFuchsia);
+
+      $('.panel').hover(
+              function(){
+                console.log("Someone came to town")
+                $(this).addClass("redoutline");
+              },
+              function(){
+                console.log("Someone left town")
+                $(this).removeClass("redoutline");
+              }
+      );
+
+    });
+
+    </script>
+  </body>
+</html>
