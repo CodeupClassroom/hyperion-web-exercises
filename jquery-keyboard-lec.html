@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        span {
+            display: inline-block;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Keyboard Events in jQuery</title>
+</head>
+<body>
+
+<h1>Keyboard Events in jQuery</h1>
+
+<div id="content"></div>
+
+<textarea name="bill" id="ted" cols="30" rows="10"></textarea>
+
+<script
+        src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
+<script>
+    // $('#ted').keydown(function() {
+    //     $('#content').append("Key was pressed");
+    // });
+
+    // $('#ted').keypress(function() {
+    //     $('#content').append("Key was pressed");
+    // });
+
+    // $('#ted').keyup(function() {
+    //     $('#content').append("Key was pressed");
+    // });
+
+    $('body').keydown(function(e) {
+        console.log(e.code);
+        if (e.code === "KeyV") {
+            $(this).css({
+                "background": "#335",
+                "color": "antiquewhite"
+            });
+        }
+    });
+
+    $('#ted').on("keydown", function() {
+        $('#content').append("<span class='banana'>Key was pressed</span>");
+    });
+
+    $('h1').hover(function(){
+        $(this).html("Hello from jQuery!");
+    }, function(){
+        $(this).html("Goodbye from jQuery!");
+    });
+
+    $('h1').on("click", function() {
+        $('#content').append("<span>h1 was clicked</span>");
+        $(this).off();
+        $(this).mouseenter(function() {
+            $(this).html("Back from the dead!");
+        });
+    });
+
+    $('#content').on('click', '.banana', function () {
+        $(this).css('background', '#ef0');
+    });
+
+    // $('.banana').click(function() {
+    //     $(this).css('background', '#ef0');
+    // });
+
+
+</script>
+</body>
+</html>
