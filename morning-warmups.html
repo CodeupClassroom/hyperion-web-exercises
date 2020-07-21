@@ -224,6 +224,18 @@
         // console.log(revAlphaArray([0]));
         // console.log(revAlphaArray(["Prim", "Imar", "Rima", "Mary"]));
 
+        // Write a JavaScript function that takes in two arguments, and returns whether the first argument is even divisible by the second argument, or not. Non-number arguments should have the function return null.
+        function evenlyDivisible(num1, num2) {
+            if (typeof num1 === "number" && typeof num2 === "number") {
+                return num1 % num2 === 0;
+            } else {
+                return null;
+            }
+        }
+
+        // console.log(evenlyDivisible(21, 7));
+        // console.log(evenlyDivisible("Day", "Night"));
+
 
     </script>
 </body>
