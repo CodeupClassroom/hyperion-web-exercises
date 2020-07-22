@@ -15,6 +15,12 @@
         .highlighter {
             background: #ef0;
         }
+        .emboldened {
+            font-weight: bold;
+        }
+        .enbluened {
+            color: #373fff;
+        }
         body {
             font-size: 1.25em;
         }
@@ -122,6 +128,20 @@
 
         $("dt").click(function () {
             $(this).toggleClass("highlighter");
+        });
+
+        $("#btn-2").click(function() {
+            $("ul").each(function() {
+                $(this).children().last().toggleClass("highlighter");
+            });
+        });
+
+        $("h3").click(function() {
+            $(this).next().children().toggleClass("emboldened");
+        });
+
+        $("li").click(function() {
+            $(this).parent().children().first().toggleClass("enbluened");
         })
     });
 </script>
