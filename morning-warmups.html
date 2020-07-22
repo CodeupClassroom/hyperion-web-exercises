@@ -5,6 +5,7 @@
     <title>Morning Warmups</title>
 </head>
 <body>
+    <h1>Open your console to see the results!</h1>
     <script>
         // Write a JavaScript function that takes in a number and returns the number multiplied by 5.
 
@@ -235,6 +236,22 @@
 
         // console.log(evenlyDivisible(21, 7));
         // console.log(evenlyDivisible("Day", "Night"));
+
+        // Write a JavaScript function that takes in a length in inches (a number), and converts it to a string listing the length in feet and inches. (Example: 78 => 6’6”). Non-number arguments should have the function return null.
+
+        function inchesToHeight (num) {
+            if (typeof num === "number") {
+                return Math.floor(num / 12) + "'" + (num % 12) + "\"";
+            } else {
+                return null;
+            }
+        }
+
+        console.log(inchesToHeight(86));
+        console.log(inchesToHeight(73));
+        console.log(inchesToHeight("Bobcat"));
+
+
 
 
     </script>
