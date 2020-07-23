@@ -78,44 +78,48 @@ $('#submit').click(function(e) {
                         $('#picture-example').append('<img class="push over2" src="' + resp.sprites.front_default + '" alt="' + val + '">');
                         $.ajax('https://pokeapi.co/api/v2/pokemon/mamoswine').done(function (resp) {
                             $('#picture-example').append('<img class="push over3" src="' + resp.sprites.front_default + '" alt="' + val + '">');
-                            $.ajax('https://pokeapi.co/api/v2/pokemon/sylveot').done(function (resp) {
+                            $.ajax('https://pokeapi.co/api/v2/pokemon/sylveon').done(function (resp) {
                                 $('#picture-example').append('<img class="push syl" src="' + resp.sprites.front_default + '" alt="' + val + '">');
                                 $.ajax('https://pokeapi.co/api/v2/pokemon/sandslash').done(function (resp) {
                                     $('#picture-example').append('<img class="push slash" src="' + resp.sprites.front_default + '" alt="' + val + '"><h4>These are David\'s favorite Pokémon.</h4>');
                                 }).fail(function () {
                                     failure = true;
+                                }).always(function() {
+                                    if (failure) {
+                                        $('#picture-example').html('<img class="greymon" src="img/metal-greymon.gif" alt="Someone done goofered"><h4 class="pull">David can\'t spell the names of his favorite Pokémon. Oppsies.</h4>');
+                                    }
                                 });
                             }).fail(function () {
                                 failure = true;
-
+                            }).always(function() {
                                 if (failure) {
                                     $('#picture-example').html('<img class="greymon" src="img/metal-greymon.gif" alt="Someone done goofered"><h4 class="pull">David can\'t spell the names of his favorite Pokémon. Oppsies.</h4>');
                                 }
                             });
                         }).fail(function () {
                             failure = true;
-
+                        }).always(function() {
                             if (failure) {
                                 $('#picture-example').html('<img class="greymon" src="img/metal-greymon.gif" alt="Someone done goofered"><h4 class="pull">David can\'t spell the names of his favorite Pokémon. Oppsies.</h4>');
                             }
                         });
                     }).fail(function () {
                         failure = true;
-
+                    }).always(function() {
                         if (failure) {
                             $('#picture-example').html('<img class="greymon" src="img/metal-greymon.gif" alt="Someone done goofered"><h4 class="pull">David can\'t spell the names of his favorite Pokémon. Oppsies.</h4>');
                         }
                     });
                 }).fail(function () {
                     failure = true;
-
+                }).always(function() {
                     if (failure) {
                         $('#picture-example').html('<img class="greymon" src="img/metal-greymon.gif" alt="Someone done goofered"><h4 class="pull">David can\'t spell the names of his favorite Pokémon. Oppsies.</h4>');
                     }
                 });
             }).fail(function () {
                 failure = true;
-
+            }).always(function() {
                 if (failure) {
                     $('#picture-example').html('<img class="greymon" src="img/metal-greymon.gif" alt="Someone done goofered"><h4 class="pull">David can\'t spell the names of his favorite Pokémon. Oppsies.</h4>');
                 }
