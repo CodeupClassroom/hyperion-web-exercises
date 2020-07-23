@@ -247,11 +247,22 @@
             }
         }
 
-        console.log(inchesToHeight(86));
-        console.log(inchesToHeight(73));
-        console.log(inchesToHeight("Bobcat"));
+        // console.log(inchesToHeight(86));
+        // console.log(inchesToHeight(73));
+        // console.log(inchesToHeight("Bobcat"));
 
+        // Write a function that takes in a string and returns the number of words in the string. Non-string inputs should return null.
 
+        function numOfWords(str) {
+            if (typeof str === "string") {
+                return str.split(" ").length;
+            } else {
+                return null;
+            }
+        }
+
+        console.log(numOfWords("Hakeem Olajuwon is a good good basketball player."));
+        console.log(numOfWords(false));
 
 
     </script>
