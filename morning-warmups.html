@@ -5,6 +5,7 @@
     <title>Morning Warmups</title>
 </head>
 <body>
+    <h1>Open your console to see the results!</h1>
     <script>
         // Write a JavaScript function that takes in a number and returns the number multiplied by 5.
 
@@ -236,6 +237,7 @@
         // console.log(evenlyDivisible(21, 7));
         // console.log(evenlyDivisible("Day", "Night"));
 
+
         // Write a function that returns “fizz”, “buzz”, or “fizzbuzz” based on the conditions of the famous FizzBuzz exercise. Any number that doesn’t match these conditions should return the number passed. Any non-number passed should have the function return null.
 
         function fizzOrBuzz(num) {
@@ -252,12 +254,39 @@
             }
         }
 
-        console.log(fizzOrBuzz(6));
-        console.log(fizzOrBuzz(55));
-        console.log(fizzOrBuzz(45));
-        console.log(fizzOrBuzz(17));
-        console.log(fizzOrBuzz("Dale"));
-        console.log(fizzOrBuzz(null));
+        // console.log(fizzOrBuzz(6));
+        // console.log(fizzOrBuzz(55));
+        // console.log(fizzOrBuzz(45));
+        // console.log(fizzOrBuzz(17));
+        // console.log(fizzOrBuzz("Dale"));
+        // console.log(fizzOrBuzz(null));
+
+        // Write a JavaScript function that takes in a length in inches (a number), and converts it to a string listing the length in feet and inches. (Example: 78 => 6’6”). Non-number arguments should have the function return null.
+
+        function inchesToHeight (num) {
+            if (typeof num === "number") {
+                return Math.floor(num / 12) + "'" + (num % 12) + "\"";
+            } else {
+                return null;
+            }
+        }
+
+        // console.log(inchesToHeight(86));
+        // console.log(inchesToHeight(73));
+        // console.log(inchesToHeight("Bobcat"));
+
+        // Write a function that takes in a string and returns the number of words in the string. Non-string inputs should return null.
+
+        function numOfWords(str) {
+            if (typeof str === "string") {
+                return str.split(" ").length;
+            } else {
+                return null;
+            }
+        }
+
+        // console.log(numOfWords("Hakeem Olajuwon is a good good basketball player."));
+        // console.log(numOfWords(false));
 
     </script>
 </body>
