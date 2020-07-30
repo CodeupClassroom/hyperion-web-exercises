@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mouse Events in jQuery</title>
+    <link href="https://fonts.googleapis.com/css?family=Lekton" rel="stylesheet">
+    <style>
+        body {
+            background-color: darkslategrey;
+            color: burlywood;
+            font-family: 'Lekton', sans-serif;
+        }
+
+        .grandpa {
+            background-color: brown;
+            height: 8.85em;
+            width: 74.73em;
+            box-shadow: 4px 4px 9px black;
+        }
+
+        .dad {
+            background-color: chocolate;
+            display: inline-block;
+            height: 7.25em;
+        }
+
+        .son {
+            background-color: peru;
+            display: inline-block;
+            height: 7.25em;
+            position: relative;
+            top: .75em;
+            left: .75em;
+        }
+
+        h1 {
+            position: relative;
+            display: inline-block;
+            background-color: burlywood;
+            margin: 0;
+            font-size: 6em;
+            top: .125em;
+            left: .125em;
+            padding: 10px 10px 12px 10px;
+            color: darkslategrey;
+        }
+
+        .circle {
+            border-radius: 50%;
+            box-shadow: 4px 4px 9px black;
+        }
+
+        .grandma {
+            height: 400px;
+            width: 400px;
+            background: url("img/jupiter.webp");
+            background-size: cover;
+            position: absolute;
+            bottom: 12px;
+            right: 20px;
+        }
+
+        .daughter {
+            height: 120px;
+            width: 120px;
+            background: chocolate;
+            position: absolute;
+            bottom: 90px;
+            right: 420px;
+        }
+
+        .grand-daughter {
+            height: 70px;
+            width: 70px;
+            background: brown;
+            position: absolute;
+            bottom:-80px;
+            right: -50px;
+        }
+
+        .push {
+            position: relative;
+            top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="grandpa">
+        <div class="dad">
+            <div class="son">
+                <h1>Updating to ECMAScript 6</h1>
+            </div>
+        </div>
+    </div>
+
+    <p id="snarky-text">Don't get distracted by the dots.</p>
+
+
+    <div class="circle grandma">
+        <div class="circle mom">
+            <div id="importanter-circle" class="circle daughter">
+                <div id="important-circle" class="circle grand-daughter"></div>
+            </div>
+        </div>
+    </div>
+    <script src="js/es6-lec.js"></script>
+</body>
+</html>
