@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Functional Methods</title>
+</head>
+<body>
+
+<h1>Functional Methods</h1>
+
+<div id="cheeses"></div>
+
+<script>
+
+    "use strict";
+
+    // Today we're gonna be covering the map, filter, and reduce methods.
+
+    // Map will allow us to make a copy of an array where each element of an array is changed with a callback method.
+
+    let favoriteNumbers = [17,22,34,4,19];
+
+    let dubNums = favoriteNumbers.map((number) => number * 2);
+
+    // console.log(dubNums);
+    // console.log(favoriteNumbers);
+
+    /**
+     * This map function is an approximate representation of what the Array.prototype.map() method does.
+     * @param array
+     * @param callback
+     * @returns {Array}
+     */
+    function map(array, callback) {
+        let output = [];
+        for (let i = 0; i < array.length; i += 1) {
+            output.push(callback(array[i]));
+        }
+        return output;
+    }
+
+    // console.log(map(favoriteNumbers, (number) => {
+    //     return number * 2;
+    // }));
+
+    let cheeses = ['GouDa', 'SwIsS', "muenster", "KrafT AmeRican Singles"];
+
+    cheeses = cheeses.map((cheese) => cheese.toUpperCase());
+
+    // console.log(cheeses);
+
+    let cheesesHTML = cheeses.map((cheese) => `<li>${cheese}</li>`);
+
+    // console.log(cheesesHTML);
+
+    document.getElementById("cheeses").innerHTML = cheesesHTML.join("");
+
+    let evensAsTrue = favoriteNumbers.map((num) => {
+        if (num % 2 === 0) {
+            return true;
+        } else {
+            return num;
+        }
+    });
+
+    // console.log(evensAsTrue);
+
+
+    // Filter will allow us to make a copy of an array where only the elements that meet certain criteria are in the new copy.
+
+    let oddFavorites = favoriteNumbers.filter((num) => num % 2 !== 0);
+
+    // console.log(oddFavorites);
+
+    /**
+     * This filter function is an approximate representation of what the Array.prototype.filter() method does.
+     * @param array
+     * @param callback
+     * @returns {Array}
+     */
+    function filter(array, callback) {
+        let output = [];
+        for (let i = 0; i < array.length; i += 1) {
+            if (callback(array[i])) {
+                output.push(array[i]);
+            }
+        }
+        return output;
+    }
+
+    // console.log(filter(favoriteNumbers, (num) => num % 2 !== 0));
+
+    // cheesesHTML = cheeses.filter((cheese) => cheese.length <= 12).map((cheese) => `<li>${cheese}</li>`);
+    // cheeses = cheeses.filter((cheese) => cheese.length <= 12);
+
+    // console.log(cheeses);
+    // console.log(cheesesHTML);
+
+    // Reduce allows us to take a collection and turn it into a single value.
+
+    // console.log(favoriteNumbers);
+
+    let favoriteSum = favoriteNumbers.reduce((sum, num) => {
+        // console.log(sum);
+        return sum + num;
+        }, 0);
+
+    // console.log(favoriteSum);
+
+    /**
+     * This reduce function is an approximate representation of what the Array.prototype.reduce() method does.
+     * Unlike the actual array reduce method, this function REQUIRES a default starting value.
+     * @param array
+     * @param callback
+     * @param startingValue
+     * @returns {*}
+     */
+    function reduce(array, callback, startingValue) {
+        let output = startingValue;
+        for (let i = 0; i < array.length; i += 1) {
+            output = callback(output, array[i]);
+        }
+        return output;
+    }
+
+    // console.log(reduce(favoriteNumbers, (sum, num) => sum + num, 0));
+
+    let salesPeople = [{name: "Jim", units: 7}, {name: "James", units: 8}, {name: "Garfield", units: 92}];
+
+    let salesReport = salesPeople.reduce((finalString, person) => {
+        // console.log(finalString);
+        if (person.units > 1 || person.units === 0) {
+            return `${finalString}${person.name} has sold ${person.units} units this quarter! `
+        } else {
+            return `${finalString}${person.name} has sold ${person.units} unit this quarter! `
+        }
+    }, "");
+
+    // console.log(salesReport);
+
+    console.log(cheeses);
+
+    cheesesHTML = cheeses.map((cheese) => `<li>${cheese}</li>`).reduce((finalHTML, li) => finalHTML + li, "<ul>") + "</ul>";
+
+    document.getElementById("cheeses").innerHTML = cheesesHTML;
+
+
+    // ======================== TESTING THE FUNCTIONS
+
+    // const testArray = [1, 2, 3];
+    //
+    // const mapOutput = map(testArray, function(element) {
+    //     return element + 1;
+    // });
+    //
+    // console.log(mapOutput);
+    //
+    // const filterOutput = filter(testArray, function(element) {
+    //     return element !== 2;
+    // });
+    //
+    // console.log(filterOutput);
+    //
+    // const reduceOutput = reduce(testArray, function(accumulator, element) {
+    //     return accumulator + element;
+    // }, 0);
+    //
+    // console.log(reduceOutput);
+
+    //  ======================== USING THE ACTUAL ARRAY METHODS
+
+    // const arr = [1, 2, 3];
+    //
+    // const mapMethodOutput = arr.map(function(element) {
+    //     return element + 1;
+    // });
+    //
+    // console.log(mapMethodOutput);
+    //
+    // const filterMethodOutput = arr.filter(function(element) {
+    //     return element !== 2;
+    // });
+    //
+    // console.log(filterMethodOutput);
+    //
+    // const reduceMethodOutput = arr.reduce(function(accumulator, element) {
+    //     return accumulator + element;
+    // }, 0);
+    //
+    // console.log(reduceMethodOutput);
+
+</script>
+
+</body>
+</html>
