@@ -125,6 +125,15 @@
 
     // console.log(reduce(favoriteNumbers, (sum, num) => sum + num, 0));
 
+    // We can also use the reduce method to map & filter!
+
+    let doubleNumbers = favoriteNumbers.reduce(function (arr, num) {
+        arr.push(num * 2);
+        return arr;
+    }, []);
+
+    // console.log(doubleNumbers);
+
     let salesPeople = [{name: "Jim", units: 7}, {name: "James", units: 8}, {name: "Garfield", units: 92}];
 
     let salesReport = salesPeople.reduce((finalString, person) => {

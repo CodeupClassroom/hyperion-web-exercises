@@ -288,6 +288,52 @@
         // console.log(numOfWords("Hakeem Olajuwon is a good good basketball player."));
         // console.log(numOfWords(false));
 
+        // Using the reduce method, set a variable for the element from the array of hamsters that has the largest heightInMM property.
+
+        const hamsters = [
+        {
+            name: "Hamtaro",
+                heightInMM: 86,
+            fur: ['orange', 'white'],
+            gender: "male",
+            dateOfBirth: "August 6"
+        } , {
+            name: "Bijou",
+                heightInMM: 75,
+                fur: ['white'],
+                gender: "female",
+                dateOfBirth: "July 10"
+        } , {
+            name: "Oxnard",
+                heightInMM: 100,
+                fur: ['grey', 'white'],
+                gender: "male",
+                dateOfBirth: "May 3"
+        } , {
+            name: "Boss",
+                heightInMM: 120,
+                fur: ['brown', 'white'],
+                gender: "male",
+                dateOfBirth: "Spetember 21"
+        } , {
+            name: "Snoozer",
+                heightInMM: 85,
+                fur: ['brown', 'white', "pink"],
+                gender: "male",
+                dateOfBirth: "January 14"
+        }
+        ];
+
+        let tallestHamHam = hamsters.reduce((tallHamster, hamHam) => {
+            if (hamHam.heightInMM > tallHamster.heightInMM) {
+                return hamHam;
+            } else {
+                return tallHamster;
+            }
+        }, {heightInMM: 0});
+
+        console.log(tallestHamHam);
+
     </script>
 </body>
 </html>
