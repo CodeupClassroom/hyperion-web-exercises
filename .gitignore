@@ -3,3 +3,6 @@
 .DS_STORE
 confessions.txt
 keys.js
+node_modules
+*.map
+js/node-main.js
